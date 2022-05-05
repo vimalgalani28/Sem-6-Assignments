@@ -1,0 +1,77 @@
+body {
+  background: #222;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+  margin: 20px auto;
+  width: 90%;
+  padding: 20px;
+  max-width: 550px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(1,1,1, 0.2);
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.view-container {
+  border: 2px solid #222;
+  padding: 8px;
+  min-height: 40px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-align: right;
+}
+
+.calc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+.numeral-button {
+  background: #fff;
+  border: 2px solid #222;
+  padding: 16px 8px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 25px;
+  transition: 0.3s ease-in-out;
+  color: #222;
+}
+
+.numeral-button:hover {
+  background: #222;
+  color: #fff;
+}
+
+.op-button {
+  background: #222;
+  border: 2px solid #222;
+  padding: 16px 8px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 25px;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+}
+
+.op-button:hover {
+  background: #fff;
+  color: #222;
+}
