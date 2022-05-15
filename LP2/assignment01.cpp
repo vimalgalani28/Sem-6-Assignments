@@ -6,13 +6,13 @@ class  Graph
     private:
         int V;
         list<int> *adj;
-public:
-    Graph(int v);
-    void addEdge(int v, int w);
-    void DFSIteratively(int s);
-    void DFSRecursively(int s);
-    void recursive(int v, vector<bool> &visited);
-    void BFS(int s);
+    public:
+        Graph(int v);
+        void addEdge(int v, int w);
+        void DFSIteratively(int s);
+        void DFSRecursively(int s);
+        void recursive(int v, vector<bool> &visited);
+        void BFS(int s);
 };
 
 void Graph::DFSIteratively(int s) {
