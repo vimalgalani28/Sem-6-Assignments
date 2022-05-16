@@ -19,7 +19,7 @@ public:
     void PrimsBrute() {
         int parent[N]; 
         int key[N];
-        int mstSet[N];
+        bool mstSet[N];
         for(int i = 0; i < N; i++) {
             key[i] = INT_MAX;
             mstSet[i] = false;
@@ -65,7 +65,7 @@ public:
         key[0] = 0;
         pq.push({0, 0});
         for(int count = 0; count < N - 1; count++) { // since spanning tree has n-1 edges
-            int u = pq.top().first;
+            int u = pq.top().second;
             pq.pop();
             mstSet[u] = true; // included in mst
             for(auto it : adj[u]) { // for all the adjacent nodes of u
@@ -73,7 +73,7 @@ public:
                 int w = it.second; //cost
                 if(mstSet[v] == false && w < key[v]) {
                     parent[v] = u;
-                    pq.push({ v, key[v] });
+                    pq.push({ w, v });
                     key[v] = w;
                 }
             }
@@ -88,12 +88,14 @@ public:
 
 int main () {
     Prims g(5);
-    g.addEdge(0, 1, 2);
-    g.addEdge(0, 3, 6);
-    g.addEdge(1, 3, 8);
-    g.addEdge(1, 4, 3);
-    g.addEdge(1, 2, 3);
-    g.addEdge(2, 4, 7);
+    g.addEdge(0, 1, 10);
+    g.addEdge(0, 2, 6);
+    g.addEdge(0, 3, 7);
+    g.addEdge(0, 4, 6);
+    g.addEdge(1, 2, 5);
+    g.addEdge(2, 4, 11);
+    g.addEdge(4, 3, 12);
+    g.addEdge(3, 1, 4);
     cout<<"Using Burte force:\n";
     g.PrimsBrute();
     cout<<"Using Efficient Algorithm:\n";

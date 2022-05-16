@@ -15,6 +15,12 @@ class  Graph
         void BFS(int s);
 };
 
+Graph::Graph(int v)
+{
+    this->V = v;
+    this->adj = new list<int>[v];
+}
+
 void Graph::DFSIteratively(int s) {
     vector<bool>visited(V, false);
     stack<int>st;
@@ -36,11 +42,6 @@ void Graph::DFSIteratively(int s) {
     cout<<endl;
 }
 
-Graph::Graph(int v)
-{
-    this->V = v;
-    this->adj = new list<int>[v];
-}
 void Graph::addEdge(int v, int w) {
     if(v < 0 || v >= V || w < 0 || w >= V) {
         cout<<"Vertex Out Of Bound! v= " << v <<" w = "<< w<<endl;
